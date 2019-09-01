@@ -3,10 +3,10 @@ from configparser import ConfigParser
 
 log = logging.getLogger(__name__)
 
-__all__ = ('self.config')
+__all__ = ('config')
 
 class Config:
-    """Server-specific self.configuration settings read from ini file stored on the server."""
+    """Server-specific configuration settings read from ini file stored on the server."""
 
     def __init__(self):
         try:
@@ -31,16 +31,16 @@ class Config:
             self.name = self.config.get('General', 'name', fallback='Test Economy')
             self.currency_name = self.config.get('General', 'currency_name', fallback='Test Points')
             self.prefix = self.config.get('General', 'prefix', fallback='!')
-            self.cogs = self.config.get('General', 'cogs', fallback='Economy,Holidays,Bounties,Gambling,Duel,BattleRoyale,Horserace,Labels,Polls,Stats,TimedTask,Misc,Shortcuts,Northmarker').split(',')
+            self.cogs = self.config.get('General', 'cogs', fallback='timed_task,core,economy,labels,gambling,holidays,duel,battleroyale,horserace,stats').split(',')
             self.forbidden_characters = self.config.get('General', 'forbidden_characters', fallback='`,@').split(',')
             self.check_ljust = int(self.config.get('General', 'check_ljust', fallback='39'))
             self.trivia_ljust = int(self.config.get('General', 'trivia_ljust', fallback='39'))
-            self.season_ljust = int(self.config.get('General', 'season_ljust', fallback='40'))
+            self.season_ljust = int(self.config.get('General', 'season_ljust', fallback='41'))
             self.repost_attempts = int(self.config.get('General', 'repost_attempts', fallback='30'))
 
-            log.info('Finished reading server self.configuration from file')
+            log.info('Finished reading server configuration from file')
         except Exception as e:
-            print('Error reading self.config file' + str(e))
+            print('Error reading config file' + str(e))
 
 
     # For convenience
