@@ -9,15 +9,13 @@ I don't know what the python standard naming conventions/best practices are, and
 
 Everyone may feel free to fork the project to fix bugs or to add their own gambling minigames and other features.
 
-##### Note:
-Python 3 is a requirement.
-
 ##### How to install/run:
 1. Clone this repository
-2. Fill in your info in bot.ini. The important fields are: bot_channel_id, token, main_server and optionally holiday_announcement_channel_id if using the holidays cog. All IDs are long integers you can get by right-clicking a channel or server in discord. You will get your token by creating a discord 'app'. More info on discordapp.com/developers/applications/me.
-3. Fill in your info in Cogs/data/*. Appropriate examples are already given.
-4. List your admins in bot.ini, as well as your subscriber role in the [Gambling] section if using the gambling cog. Admins are usernames separated by commas.
-5. Run 'python3 . in the root directory.
+2. Install dependencies: tinydb, discord.py
+3. Fill in your info in bot.ini. The important fields are: bot_channel_id, token, main_server and optionally holiday_announcement_channel_id if using the holidays cog. All IDs are long integers you can get by right-clicking a channel or server in discord. You will get your token by creating a discord 'app'. More info on discordapp.com/developers/applications/me.
+4. Fill in your info in Cogs/data/*. Appropriate examples are already given.
+5. List your admins in bot.ini, as well as your subscriber role in the [Gambling] section if using the gambling cog. Admins are usernames separated by commas.
+6. Run 'python3 . in the root directory.
 
 ##### Asserts:
 - Stats cog must be loaded last
